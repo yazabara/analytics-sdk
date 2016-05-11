@@ -1,0 +1,24 @@
+{
+  "name": "analytics-sdk",
+  "authors": [
+    "yazabara <yazabara@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "index",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "requirejs": "~2.1.8",
+    "lodash": "~4.11.2"
+  }
+}
