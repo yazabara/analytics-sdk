@@ -18,7 +18,7 @@ require.config({
 });
 
 define(['jquery', 'lodash', 'analytics'], function ($, _, analytics) {
-    analytics.init('http://localhost:9001');
+    analytics.init('http://localhost:9001', 10);
     $("#btn1").on('click', function () {
         analytics.trackEvent("YAZABARA", "CLICK", "CLICK BUTTON");
     });

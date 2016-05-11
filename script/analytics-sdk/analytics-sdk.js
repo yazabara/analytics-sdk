@@ -60,16 +60,17 @@ define(['jquery', 'lodash'], function ($, _) {
     //Main SDK Manager
     var AnalyticsSdkManager = {};
 
-    AnalyticsSdkManager.init = function (url) {
+    AnalyticsSdkManager.init = function (url, delay) {
         if (!StorageManager.isStorageAvailable()) {
             throw new Error("Local storage is not available");
         }
         AnalyticsSdkManager.url = url;
+        AnalyticsSdkManager.secondDelay = delay || 10;
         AnalyticsSdkManager.runTracking();
     };
 
     AnalyticsSdkManager.runTracking = function () {
-        setInterval(AnalyticsSdkManager.processEvents, 10 * 1000 /*10 sec*/);
+        setInterval(AnalyticsSdkManager.processEvents, AnalyticsSdkManager.secondDelay * 1000);
         window.onbeforeunload = function () {//on close tab
             AnalyticsSdkManager.processEvents();
         }
